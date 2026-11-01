@@ -1,0 +1,239 @@
+{
+  "suite": "hivemind-receipts-conformance v1",
+  "note": "All keys in trust are test vectors only. Verdicts are what a correct Class-1 verifier MUST return.",
+  "trust": {
+    "issuers": [
+      {
+        "kid": "flM7UIzqowSew8oOmMtXgzF2rEnI0lzhPHrFjrSwuBk",
+        "cose_key": "pgECAlgrZmxNN1VJenFvd1NldzhvT21NdFhnekYyckVuSTBsemhQSHJGanJTd3VCawMmIAEhWCBahvUbA2ZCDiQXh8Hh10OQbVS_mQsQS8-bjT0ug4pFCyJYIKbuKrCxhAQ8iPvkU9MgnoyADxj4dCgxIwMtl7upIGHV",
+        "tier": "T1",
+        "display": "vectors.example"
+      },
+      {
+        "kid": "LHDlw4vjt__LsP0s995v0xQ9eMAMUETnTzpgzmw7uJk",
+        "cose_key": "pgECAlgrTEhEbHc0dmp0X19Mc1Awczk5NXYweFE5ZU1BTVVFVG5UenBnem13N3VKawMmIAEhWCAR0i-T8xjEwlXmJkQgGjrwZWwgMInW3aowcRYiL7gMHSJYILIAEEttOcjRxeWLttxAA4StZWJjphVie5ynFroSkA2i",
+        "tier": "T0",
+        "display": "Unverified issuer"
+      }
+    ],
+    "log_keys": [
+      {
+        "kid": "7qZtsGuOy1CEt_-3lzTbqb2lNAmwFtQm4cx9OL3FmUA",
+        "cose_key": "pQEBAlgrN3FadHNHdU95MUNFdF8tM2x6VGJxYjJsTkFtd0Z0UW00Y3g5T0wzRm1VQQMnIAYhWCC6wVfjZMGHcV0QJ6R5MHMCms-biG94wqiG7sCByISElw"
+      }
+    ],
+    "note_verifiers": [
+      "vectors.hivemind.example/2026+3b09ebba+AbrBV+NkwYdxXRAnpHkwcwKaz5uIb3jCqIbuwIHIhISX",
+      "w0.vectors.example+546f67d1+BMCE6yUgkaOQ5g6YJ0ntQRoq4ReM431Al4KjbTlAQAWc",
+      "w1.vectors.example+847331e0+BGr2NklattP9NA7SxRq1AYUry6OmcYRZRS36xUC4u9df",
+      "w2.vectors.example+a27fc8c9+BPqfJf5lLmBXtMw70tG9XVMMoGwUd/ZsaSuecO6zEiCp"
+    ],
+    "witness_policy": {
+      "quorum": 2,
+      "witnesses": [
+        {
+          "name": "w0.vectors.example",
+          "verifier": "w0.vectors.example+546f67d1+BMCE6yUgkaOQ5g6YJ0ntQRoq4ReM431Al4KjbTlAQAWc"
+        },
+        {
+          "name": "w1.vectors.example",
+          "verifier": "w1.vectors.example+847331e0+BGr2NklattP9NA7SxRq1AYUry6OmcYRZRS36xUC4u9df"
+        },
+        {
+          "name": "w2.vectors.example",
+          "verifier": "w2.vectors.example+a27fc8c9+BPqfJf5lLmBXtMw70tG9XVMMoGwUd/ZsaSuecO6zEiCp"
+        }
+      ]
+    }
+  },
+  "cases": [
+    {
+      "name": "valid-executed",
+      "expect": "VERIFIED",
+      "statement": "0oRYpKQBJgN4MmFwcGxpY2F0aW9uL3ZuZC5oaXZlbWluZC5hZ2VudC1hY3Rpb24tY2Fwc3VsZStjYm9yBFgrZmxNN1VJenFvd1NldzhvT21NdFhnekYyckVuSTBsemhQSHJGanJTd3VCaw+jAXdodHRwczovL3ZlY3RvcnMuZXhhbXBsZQJ4GjAxTTZBQkVDNkFYSEE4Q1NDNTFZU042SDBXBhpo53gAoRkBioFY/NKEWKmlAScDeB5hcHBsaWNhdGlvbi9zY2l0dC1yZWNlaXB0K2Nvc2UEWCs3cVp0c0d1T3kxQ0V0Xy0zbHpUYnFiMmxOQW13RnRRbTRjeDlPTDNGbVVBD6MBeCs3cVp0c0d1T3kxQ0V0Xy0zbHpUYnFiMmxOQW13RnRRbTRjeDlPTDNGbVVBAngaMDFNNkFCRUM2QVhIQThDU0M1MVlTTjZIMFcGGmrmlUwZAYsBoRkBjKEggUSDAQCA9lhAif3NPIroyRQnp5borLZjP3Xw9PbBiO33BmVnQA3p8pp4lZzSZ7HMLIlVWhWf217P8KptHUMpSoKGQMSMuTCyDVkDg65lYWdlbnShaXNwaWZmZV9pZHggc3BpZmZlOi8vdmVjdG9ycy5leGFtcGxlL2FnZW50LzFmZWZmZWN0omZzdGF0dXNpY29uZmlybWVkb3Jlc3BvbnNlX2RpZ2VzdHhHc2hhMjU2OjNkMThlYjA3MTZlYzdkOGQxMDFiMWE3NzdmNWU2ZjJlNWQxYjgwZGZhOWI5OTlmODNlNmJiMDUzNDVmMjNjMjhncHJpdmFjeaJvc2FsdF9jb21taXRtZW50eEdzaGEyNTY6YzA3MjMwZjcwNTNiZmI4NjJmYjIyNGIwZmY2NDI0MjBlYTIzN2ZlYjBhZmNiYTIyNmI1N2UwYjA1NjgyNWUxZnRkaXNjbG9zdXJlX3BvbGljeV9pZHgeaW8uaGl2ZW1pbmQuZGlzY2xvc3VyZS5kZWZhdWx0Z3Byb2ZpbGV4H3VybjpoaXZlbWluZDpyZWNlaXB0czpjYXBzdWxlOjFpYWN0aW9uX2lkeBowMU02QUJFQzZBWEhBOENTQzUxWVNONkgwV2lhc3N1cmFuY2Wia2xlZGdlcl9tb2RlaGFuY2hvcmVkcGF0dGVzdGF0aW9uX21vZGVkbm9uZWljYXVzYWxpdHmgaWlzc3VlZF9hdHgYMjAyNi0xMS0wMVQwMToyNjozNS45NzhaaW9wZXJhdGlvbqNka2luZGNtY3BmbWV0aG9kcXRvb2xzL2NhbGw6cmVmdW5kaXJpc2tfdGllcmlmaW5hbmNpYWxpcHJpbmNpcGFsoXJzdWJqZWN0X2NvbW1pdG1lbnR4R3NoYTI1NjoxNzIxMzA4NDJiZDJhZGZhMjI5ZWIxNGI2YjgwMTk2NmY4MGIwZGE0ODQ3MTAwMmQ2ODJkNjM3OWM2NGVmNTc2amNhcHN1bGVfaWR4R3NoYTI1Njo5NWZkZmEyM2EzNjI3M2MwNGU1OTFmNmYyMjBhMDZhOGEyYTcwNzVhZmI2NTFiY2YxNjBlYWEzODk3N2JiMzlka2Rpc3Bvc2l0aW9uoWlhdXRob3JpdHlvdmVjdG9yLWRlY2lzaW9ubXZlcmRpY3RfY2xhc3NoZXhlY3V0ZWRucmVxdWVzdF9kaWdlc3R4R3NoYTI1Njo4OWU0ZWI1NzBlYTdhZjA4MTY2MjliNTFlNjIxM2I1ODU1M2ExMGNjMzZjODQxMDFiZWEyY2M2MGI3NjdhN2Y2WED5pRNIAYp4ubY11bOrLvU0xThWGqFZiy35AVPFcLR/1O/rNO44Vxm0YYms8EAFYErM6ut201+FShWU8v6TpQYH",
+      "checkpoint": "vectors.hivemind.example/2026\n1\nO9neq9xk/LWCf3mQjaqr0LsANa8o+NJMR96iHxDKQac=\n\n— vectors.hivemind.example/2026 OwnrunbQp4k61Si/gp0xJM77CBid3eE6I8VdUfM1gN66grTPaZlANS9DkbjEJs0OSZeqZLOFLV29DP+ga5zUYNNqRgY=\n— w0.vectors.example VG9n0QAAAABq5pVMDqhvCVZWqUkzj+U0XzKyQ1AKU06m5N+IUxTlJNsRH9V7OPagGgWUOt60G/aKLMDqp7QLt1X3wdpBmD8kcjdCBQ==\n— w1.vectors.example hHMx4AAAAABq5pVM3iAHDOnp9cDsuOBZlpOIEzFU7+B+OT8OlfQdvGDTrdhjOPWQR7Bsv1g+I1e/yXRaC9HrgkV1ZvkEroJGAxChDw==\n— w2.vectors.example on/IyQAAAABq5pVMvrz2zghUB7qbQ/MBnWvWzKSALwiM34JjTwsD53UkL4FfUakW3pMLnDxUIaumo1CF7uHPbgt97NIhqsjGldNJAg==\n",
+      "disclosure": {
+        "capsule_id": "sha256:95fdfa23a36273c04e591f6f220a06a8a2a7075afb651bcf160eaa38977bb39d",
+        "salt": "zCu2nNud-YRV_jtcOXJIjliNbB1U_0tukpDvpHjrfDU",
+        "fields": {
+          "principal.subject": {
+            "user": "vector-user"
+          },
+          "request": {
+            "amount_minor": 1234,
+            "currency": "USD"
+          },
+          "response": {
+            "status": "succeeded"
+          }
+        }
+      }
+    },
+    {
+      "name": "valid-via-consistency-to-newer-checkpoint",
+      "expect": "VERIFIED",
+      "statement": "0oRYpKQBJgN4MmFwcGxpY2F0aW9uL3ZuZC5oaXZlbWluZC5hZ2VudC1hY3Rpb24tY2Fwc3VsZStjYm9yBFgrZmxNN1VJenFvd1NldzhvT21NdFhnekYyckVuSTBsemhQSHJGanJTd3VCaw+jAXdodHRwczovL3ZlY3RvcnMuZXhhbXBsZQJ4GjAxTTZBQkVDNkFYSEE4Q1NDNTFZU042SDBXBhpo53gAoRkBioFY/NKEWKmlAScDeB5hcHBsaWNhdGlvbi9zY2l0dC1yZWNlaXB0K2Nvc2UEWCs3cVp0c0d1T3kxQ0V0Xy0zbHpUYnFiMmxOQW13RnRRbTRjeDlPTDNGbVVBD6MBeCs3cVp0c0d1T3kxQ0V0Xy0zbHpUYnFiMmxOQW13RnRRbTRjeDlPTDNGbVVBAngaMDFNNkFCRUM2QVhIQThDU0M1MVlTTjZIMFcGGmrmlUwZAYsBoRkBjKEggUSDAQCA9lhAif3NPIroyRQnp5borLZjP3Xw9PbBiO33BmVnQA3p8pp4lZzSZ7HMLIlVWhWf217P8KptHUMpSoKGQMSMuTCyDVkDg65lYWdlbnShaXNwaWZmZV9pZHggc3BpZmZlOi8vdmVjdG9ycy5leGFtcGxlL2FnZW50LzFmZWZmZWN0omZzdGF0dXNpY29uZmlybWVkb3Jlc3BvbnNlX2RpZ2VzdHhHc2hhMjU2OjNkMThlYjA3MTZlYzdkOGQxMDFiMWE3NzdmNWU2ZjJlNWQxYjgwZGZhOWI5OTlmODNlNmJiMDUzNDVmMjNjMjhncHJpdmFjeaJvc2FsdF9jb21taXRtZW50eEdzaGEyNTY6YzA3MjMwZjcwNTNiZmI4NjJmYjIyNGIwZmY2NDI0MjBlYTIzN2ZlYjBhZmNiYTIyNmI1N2UwYjA1NjgyNWUxZnRkaXNjbG9zdXJlX3BvbGljeV9pZHgeaW8uaGl2ZW1pbmQuZGlzY2xvc3VyZS5kZWZhdWx0Z3Byb2ZpbGV4H3VybjpoaXZlbWluZDpyZWNlaXB0czpjYXBzdWxlOjFpYWN0aW9uX2lkeBowMU02QUJFQzZBWEhBOENTQzUxWVNONkgwV2lhc3N1cmFuY2Wia2xlZGdlcl9tb2RlaGFuY2hvcmVkcGF0dGVzdGF0aW9uX21vZGVkbm9uZWljYXVzYWxpdHmgaWlzc3VlZF9hdHgYMjAyNi0xMS0wMVQwMToyNjozNS45NzhaaW9wZXJhdGlvbqNka2luZGNtY3BmbWV0aG9kcXRvb2xzL2NhbGw6cmVmdW5kaXJpc2tfdGllcmlmaW5hbmNpYWxpcHJpbmNpcGFsoXJzdWJqZWN0X2NvbW1pdG1lbnR4R3NoYTI1NjoxNzIxMzA4NDJiZDJhZGZhMjI5ZWIxNGI2YjgwMTk2NmY4MGIwZGE0ODQ3MTAwMmQ2ODJkNjM3OWM2NGVmNTc2amNhcHN1bGVfaWR4R3NoYTI1Njo5NWZkZmEyM2EzNjI3M2MwNGU1OTFmNmYyMjBhMDZhOGEyYTcwNzVhZmI2NTFiY2YxNjBlYWEzODk3N2JiMzlka2Rpc3Bvc2l0aW9uoWlhdXRob3JpdHlvdmVjdG9yLWRlY2lzaW9ubXZlcmRpY3RfY2xhc3NoZXhlY3V0ZWRucmVxdWVzdF9kaWdlc3R4R3NoYTI1Njo4OWU0ZWI1NzBlYTdhZjA4MTY2MjliNTFlNjIxM2I1ODU1M2ExMGNjMzZjODQxMDFiZWEyY2M2MGI3NjdhN2Y2WED5pRNIAYp4ubY11bOrLvU0xThWGqFZiy35AVPFcLR/1O/rNO44Vxm0YYms8EAFYErM6ut201+FShWU8v6TpQYH",
+      "checkpoint": "vectors.hivemind.example/2026\n2\naChQ/qeTMqYOQQssXSZSRsIiyOkB8ZGVYwf9UNshrTs=\n\n— vectors.hivemind.example/2026 OwnrujkR3jNEAfaAsVO9Nq/5jh4USa1K9kJnu8szg/KMynoX3X45DWbM0hHDnDuPPycX1WnCTQX/cJPtgvIOjLH3gA0=\n— w0.vectors.example VG9n0QAAAABq5pVMOp6zZKj6BuwtmzKeUavFcjrC+Fzquqj6LkJFyxDKixgx7Jy0+kdN+7G1X27yXq65c//Wd5pew/1C8D/j8c95Dg==\n— w1.vectors.example hHMx4AAAAABq5pVMpUeDgahhQnr6lrG78FlBt7hRdxZ0n74nsv4OpOG7zzVGyd9TeSjqX/bgPY0cQZfbcy0x25I5QzKd/JZ+Z9INDw==\n— w2.vectors.example on/IyQAAAABq5pVMoYptNMHQQ3E4W8F5Sxgf1DOxcepVMahsZj6NIuchEAd6CYU+/XbIjLK53+l6Aek4GzpbVmVAud1PdT8FMbM8BA==\n",
+      "consistency_chain": {
+        "root_at_receipt": "O9neq9xk/LWCf3mQjaqr0LsANa8o+NJMR96iHxDKQac=",
+        "proof": {
+          "first_size": 1,
+          "second_size": 2,
+          "hashes": [
+            "nTyb8e7pefOaqNg92VofaEzTZhZHhcIY3TfeZmnm9R8="
+          ]
+        }
+      },
+      "note": "second_size here is the size when generated (before the batch append); chain to the supplied checkpoint size only"
+    },
+    {
+      "name": "valid-blocked-verdict",
+      "expect": "VERIFIED",
+      "statement": "0oRYpKQBJgN4MmFwcGxpY2F0aW9uL3ZuZC5oaXZlbWluZC5hZ2VudC1hY3Rpb24tY2Fwc3VsZStjYm9yBFgrZmxNN1VJenFvd1NldzhvT21NdFhnekYyckVuSTBsemhQSHJGanJTd3VCaw+jAXdodHRwczovL3ZlY3RvcnMuZXhhbXBsZQJ4GjAxTTZBQkVDODlBRDMwUVlTSlc5RU5OMlNYBhpo53gAoRkBioFZAR/ShFippQEnA3geYXBwbGljYXRpb24vc2NpdHQtcmVjZWlwdCtjb3NlBFgrN3FadHNHdU95MUNFdF8tM2x6VGJxYjJsTkFtd0Z0UW00Y3g5T0wzRm1VQQ+jAXgrN3FadHNHdU95MUNFdF8tM2x6VGJxYjJsTkFtd0Z0UW00Y3g5T0wzRm1VQQJ4GjAxTTZBQkVDODlBRDMwUVlTSlc5RU5OMlNYBhpq5pVMGQGLAaEZAYyhIIFYJoMCAYFYIDvZ3qvcZPy1gn95kI2qq9C7ADWvKPjSTEfeoh8QykGn9lhAbUXbvdZ+YQVIb+f8RcEFi1uNo7i0jWm0VPlnzff4rYCAXdAl6+V/924kT5LZnJVQZ/dAZZfK5VtsRDT4LzEYCFkDJK5lYWdlbnShaXNwaWZmZV9pZHggc3BpZmZlOi8vdmVjdG9ycy5leGFtcGxlL2FnZW50LzFmZWZmZWN0oWZzdGF0dXNkbm9uZWdwcml2YWN5om9zYWx0X2NvbW1pdG1lbnR4R3NoYTI1NjoyMjUyYmEyYzcyYmNkZWE0YTFjMjI2MzM5YzllMjExYmUzNmYyM2IwMjQ2OWQ3MmE1YmM5Y2JiZDZmY2EzZTVmdGRpc2Nsb3N1cmVfcG9saWN5X2lkeB5pby5oaXZlbWluZC5kaXNjbG9zdXJlLmRlZmF1bHRncHJvZmlsZXgfdXJuOmhpdmVtaW5kOnJlY2VpcHRzOmNhcHN1bGU6MWlhY3Rpb25faWR4GjAxTTZBQkVDODlBRDMwUVlTSlc5RU5OMlNYaWFzc3VyYW5jZaJrbGVkZ2VyX21vZGVoYW5jaG9yZWRwYXR0ZXN0YXRpb25fbW9kZWRub25laWNhdXNhbGl0eaBpaXNzdWVkX2F0eBgyMDI2LTExLTAxVDAxOjI2OjM2LjA0MVppb3BlcmF0aW9uo2RraW5kY21jcGZtZXRob2RxdG9vbHMvY2FsbDpyZWZ1bmRpcmlza190aWVyaWZpbmFuY2lhbGlwcmluY2lwYWyhcnN1YmplY3RfY29tbWl0bWVudHhHc2hhMjU2OjdhNzIyZjUyYjk4NTFmYTdhYmEyYjYyNjYwZTNkMTM2YmEwMTVhMDQ3YmZlMWI0NmRhYjQzNDMxNzcyZjJiM2VqY2Fwc3VsZV9pZHhHc2hhMjU2OmIyYjYwMjU0ZmMxMzNmNjBmNzhkNzhkNjgwN2MwN2UxOGNjYjZkMWI0ODFmNzg2ODc2YzNlMDUxOTk5N2I5NjRrZGlzcG9zaXRpb26haWF1dGhvcml0eW92ZWN0b3ItZGVjaXNpb25tdmVyZGljdF9jbGFzc2dibG9ja2VkbnJlcXVlc3RfZGlnZXN0eEdzaGEyNTY6NjZmYWUxZmQxY2ZkMjUwMTRhYmNhNmRlNzcxYzU0MmYyN2MzMjkxNDY3NjYxZGYxOWE2Mzc3MjI4OWY5ZGVlZFhAlSezvIiGd716QdaYgCDDMNDdAspYZUT0lDt4XxI3t56gCyzLxDQ+51ssZDpVnniT8p+wqGZ5+C7z/vW76U8yHA==",
+      "checkpoint": "vectors.hivemind.example/2026\n2\naChQ/qeTMqYOQQssXSZSRsIiyOkB8ZGVYwf9UNshrTs=\n\n— vectors.hivemind.example/2026 OwnrujkR3jNEAfaAsVO9Nq/5jh4USa1K9kJnu8szg/KMynoX3X45DWbM0hHDnDuPPycX1WnCTQX/cJPtgvIOjLH3gA0=\n— w0.vectors.example VG9n0QAAAABq5pVMOp6zZKj6BuwtmzKeUavFcjrC+Fzquqj6LkJFyxDKixgx7Jy0+kdN+7G1X27yXq65c//Wd5pew/1C8D/j8c95Dg==\n— w1.vectors.example hHMx4AAAAABq5pVMpUeDgahhQnr6lrG78FlBt7hRdxZ0n74nsv4OpOG7zzVGyd9TeSjqX/bgPY0cQZfbcy0x25I5QzKd/JZ+Z9INDw==\n— w2.vectors.example on/IyQAAAABq5pVMoYptNMHQQ3E4W8F5Sxgf1DOxcepVMahsZj6NIuchEAd6CYU+/XbIjLK53+l6Aek4GzpbVmVAud1PdT8FMbM8BA==\n"
+    },
+    {
+      "name": "older-receipt-without-consistency-chain",
+      "expect": "FAILED",
+      "statement": "0oRYpKQBJgN4MmFwcGxpY2F0aW9uL3ZuZC5oaXZlbWluZC5hZ2VudC1hY3Rpb24tY2Fwc3VsZStjYm9yBFgrZmxNN1VJenFvd1NldzhvT21NdFhnekYyckVuSTBsemhQSHJGanJTd3VCaw+jAXdodHRwczovL3ZlY3RvcnMuZXhhbXBsZQJ4GjAxTTZBQkVDNkFYSEE4Q1NDNTFZU042SDBXBhpo53gAoRkBioFY/NKEWKmlAScDeB5hcHBsaWNhdGlvbi9zY2l0dC1yZWNlaXB0K2Nvc2UEWCs3cVp0c0d1T3kxQ0V0Xy0zbHpUYnFiMmxOQW13RnRRbTRjeDlPTDNGbVVBD6MBeCs3cVp0c0d1T3kxQ0V0Xy0zbHpUYnFiMmxOQW13RnRRbTRjeDlPTDNGbVVBAngaMDFNNkFCRUM2QVhIQThDU0M1MVlTTjZIMFcGGmrmlUwZAYsBoRkBjKEggUSDAQCA9lhAif3NPIroyRQnp5borLZjP3Xw9PbBiO33BmVnQA3p8pp4lZzSZ7HMLIlVWhWf217P8KptHUMpSoKGQMSMuTCyDVkDg65lYWdlbnShaXNwaWZmZV9pZHggc3BpZmZlOi8vdmVjdG9ycy5leGFtcGxlL2FnZW50LzFmZWZmZWN0omZzdGF0dXNpY29uZmlybWVkb3Jlc3BvbnNlX2RpZ2VzdHhHc2hhMjU2OjNkMThlYjA3MTZlYzdkOGQxMDFiMWE3NzdmNWU2ZjJlNWQxYjgwZGZhOWI5OTlmODNlNmJiMDUzNDVmMjNjMjhncHJpdmFjeaJvc2FsdF9jb21taXRtZW50eEdzaGEyNTY6YzA3MjMwZjcwNTNiZmI4NjJmYjIyNGIwZmY2NDI0MjBlYTIzN2ZlYjBhZmNiYTIyNmI1N2UwYjA1NjgyNWUxZnRkaXNjbG9zdXJlX3BvbGljeV9pZHgeaW8uaGl2ZW1pbmQuZGlzY2xvc3VyZS5kZWZhdWx0Z3Byb2ZpbGV4H3VybjpoaXZlbWluZDpyZWNlaXB0czpjYXBzdWxlOjFpYWN0aW9uX2lkeBowMU02QUJFQzZBWEhBOENTQzUxWVNONkgwV2lhc3N1cmFuY2Wia2xlZGdlcl9tb2RlaGFuY2hvcmVkcGF0dGVzdGF0aW9uX21vZGVkbm9uZWljYXVzYWxpdHmgaWlzc3VlZF9hdHgYMjAyNi0xMS0wMVQwMToyNjozNS45NzhaaW9wZXJhdGlvbqNka2luZGNtY3BmbWV0aG9kcXRvb2xzL2NhbGw6cmVmdW5kaXJpc2tfdGllcmlmaW5hbmNpYWxpcHJpbmNpcGFsoXJzdWJqZWN0X2NvbW1pdG1lbnR4R3NoYTI1NjoxNzIxMzA4NDJiZDJhZGZhMjI5ZWIxNGI2YjgwMTk2NmY4MGIwZGE0ODQ3MTAwMmQ2ODJkNjM3OWM2NGVmNTc2amNhcHN1bGVfaWR4R3NoYTI1Njo5NWZkZmEyM2EzNjI3M2MwNGU1OTFmNmYyMjBhMDZhOGEyYTcwNzVhZmI2NTFiY2YxNjBlYWEzODk3N2JiMzlka2Rpc3Bvc2l0aW9uoWlhdXRob3JpdHlvdmVjdG9yLWRlY2lzaW9ubXZlcmRpY3RfY2xhc3NoZXhlY3V0ZWRucmVxdWVzdF9kaWdlc3R4R3NoYTI1Njo4OWU0ZWI1NzBlYTdhZjA4MTY2MjliNTFlNjIxM2I1ODU1M2ExMGNjMzZjODQxMDFiZWEyY2M2MGI3NjdhN2Y2WED5pRNIAYp4ubY11bOrLvU0xThWGqFZiy35AVPFcLR/1O/rNO44Vxm0YYms8EAFYErM6ut201+FShWU8v6TpQYH",
+      "checkpoint": "vectors.hivemind.example/2026\n3\ntTTC0GsSkzsxG1yTtmPGONLTNkYvFa1z8QGlaCOh27g=\n\n— vectors.hivemind.example/2026 OwnrupWZnep3ZiO682LAM+AVZdyfcoJ9qIUO5MVUr2rT7Tj9WfJwTIFq8ZIBJrwqR200LoNygEmzcxOZ8zn2ArmzFw4=\n— w0.vectors.example VG9n0QAAAABq5pVMqPAc8xaI0AJhfwiRnAxGpgtDMsGfBDzP1xI9IynuscnY5zaM8FFhwv3SyK4BrXoDhwiad2PMWPhyB/5BJa0LAw==\n— w1.vectors.example hHMx4AAAAABq5pVMZAFoOJB4RyEr8NJ5QsrRda4/2w/7PBBMN2RlGRhntwWj1FUvnIyhEBsyySdkzEDO8u0BN0zfuH/EHmKzH2QPAQ==\n— w2.vectors.example on/IyQAAAABq5pVMS2rTM3lZbrBJQxFMZ9pDLECrth7x6WZzkSkxrd1wLFg30LNaSysfOM7rrXGv2XuACV52TaqwAa0cF7kM9d6MAg==\n",
+      "detail": "a receipt for size 1 presented against a newer checkpoint without a consistency chain must not verify"
+    },
+    {
+      "name": "tampered-signature",
+      "expect": "FAILED",
+      "statement": "0oRYpKQBJgN4MmFwcGxpY2F0aW9uL3ZuZC5oaXZlbWluZC5hZ2VudC1hY3Rpb24tY2Fwc3VsZStjYm9yBFgrZmxNN1VJenFvd1NldzhvT21NdFhnekYyckVuSTBsemhQSHJGanJTd3VCaw+jAXdodHRwczovL3ZlY3RvcnMuZXhhbXBsZQJ4GjAxTTZBQkVDNkFYSEE4Q1NDNTFZU042SDBXBhpo53gAoRkBioFY/NKEWKmlAScDeB5hcHBsaWNhdGlvbi9zY2l0dC1yZWNlaXB0K2Nvc2UEWCs3cVp0c0d1T3kxQ0V0Xy0zbHpUYnFiMmxOQW13RnRRbTRjeDlPTDNGbVVBD6MBeCs3cVp0c0d1T3kxQ0V0Xy0zbHpUYnFiMmxOQW13RnRRbTRjeDlPTDNGbVVBAngaMDFNNkFCRUM2QVhIQThDU0M1MVlTTjZIMFcGGmrmlUwZAYsBoRkBjKEggUSDAQCA9lhAif3NPIroyRQnp5borLZjP3Xw9PbBiO33BmVnQA3p8pp4lZzSZ7HMLIlVWhWf217P8KptHUMpSoKGQMSMuTCyDVkDg65lYWdlbnShaXNwaWZmZV9pZHggc3BpZmZlOi8vdmVjdG9ycy5leGFtcGxlL2FnZW50LzFmZWZmZWN0omZzdGF0dXNpY29uZmlybWVkb3Jlc3BvbnNlX2RpZ2VzdHhHc2hhMjU2OjNkMThlYjA3MTZlYzdkOGQxMDFiMWE3NzdmNWU2ZjJlNWQxYjgwZGZhOWI5OTlmODNlNmJiMDUzNDVmMjNjMjhncHJpdmFjeaJvc2FsdF9jb21taXRtZW50eEdzaGEyNTY6YzA3MjMwZjcwNTNiZmI4NjJmYjIyNGIwZmY2NDI0MjBlYTIzN2ZlYjBhZmNiYTIyNmI1N2UwYjA1NjgyNWUxZnRkaXNjbG9zdXJlX3BvbGljeV9pZHgeaW8uaGl2ZW1pbmQuZGlzY2xvc3VyZS5kZWZhdWx0Z3Byb2ZpbGV4H3VybjpoaXZlbWluZDpyZWNlaXB0czpjYXBzdWxlOjFpYWN0aW9uX2lkeBowMU02QUJFQzZBWEhBOENTQzUxWVNONkgwV2lhc3N1cmFuY2Wia2xlZGdlcl9tb2RlaGFuY2hvcmVkcGF0dGVzdGF0aW9uX21vZGVkbm9uZWljYXVzYWxpdHmgaWlzc3VlZF9hdHgYMjAyNi0xMS0wMVQwMToyNjozNS45NzhaaW9wZXJhdGlvbqNka2luZGNtY3BmbWV0aG9kcXRvb2xzL2NhbGw6cmVmdW5kaXJpc2tfdGllcmlmaW5hbmNpYWxpcHJpbmNpcGFsoXJzdWJqZWN0X2NvbW1pdG1lbnR4R3NoYTI1NjoxNzIxMzA4NDJiZDJhZGZhMjI5ZWIxNGI2YjgwMTk2NmY4MGIwZGE0ODQ3MTAwMmQ2ODJkNjM3OWM2NGVmNTc2amNhcHN1bGVfaWR4R3NoYTI1Njo5NWZkZmEyM2EzNjI3M2MwNGU1OTFmNmYyMjBhMDZhOGEyYTcwNzVhZmI2NTFiY2YxNjBlYWEzODk3N2JiMzlka2Rpc3Bvc2l0aW9uoWlhdXRob3JpdHlvdmVjdG9yLWRlY2lzaW9ubXZlcmRpY3RfY2xhc3NoZXhlY3V0ZWRucmVxdWVzdF9kaWdlc3R4R3NoYTI1Njo4OWU0ZWI1NzBlYTdhZjA4MTY2MjliNTFlNjIxM2I1ODU1M2ExMGNjMzZjODQxMDFiZWEyY2M2MGI3NjdhN2Y2WED5pRNIAYp4ubY11bOrLvU0xThWGqFZiy35AVPFcLR/1O/rNO44Vxm0YYms8EAFYErM6ut201+FShWU8v6TpQcH",
+      "checkpoint": "vectors.hivemind.example/2026\n1\nO9neq9xk/LWCf3mQjaqr0LsANa8o+NJMR96iHxDKQac=\n\n— vectors.hivemind.example/2026 OwnrunbQp4k61Si/gp0xJM77CBid3eE6I8VdUfM1gN66grTPaZlANS9DkbjEJs0OSZeqZLOFLV29DP+ga5zUYNNqRgY=\n— w0.vectors.example VG9n0QAAAABq5pVMDqhvCVZWqUkzj+U0XzKyQ1AKU06m5N+IUxTlJNsRH9V7OPagGgWUOt60G/aKLMDqp7QLt1X3wdpBmD8kcjdCBQ==\n— w1.vectors.example hHMx4AAAAABq5pVM3iAHDOnp9cDsuOBZlpOIEzFU7+B+OT8OlfQdvGDTrdhjOPWQR7Bsv1g+I1e/yXRaC9HrgkV1ZvkEroJGAxChDw==\n— w2.vectors.example on/IyQAAAABq5pVMvrz2zghUB7qbQ/MBnWvWzKSALwiM34JjTwsD53UkL4FfUakW3pMLnDxUIaumo1CF7uHPbgt97NIhqsjGldNJAg==\n"
+    },
+    {
+      "name": "tampered-payload",
+      "expect": "FAILED",
+      "statement": "0oRYpKQBJgN4MmFwcGxpY2F0aW9uL3ZuZC5oaXZlbWluZC5hZ2VudC1hY3Rpb24tY2Fwc3VsZStjYm9yBFgrZmxNN1VJenFvd1NldzhvT21NdFhnekYyckVuSTBsemhQSHJGanJTd3VCaw+jAXdodHRwczovL3ZlY3RvcnMuZXhhbXBsZQJ4GjAxTTZBQkVDNkFYSEE4Q1NDNTFZU042SDBXBhpo53gAoRkBioFY/NKEWKmlAScDeB5hcHBsaWNhdGlvbi9zY2l0dC1yZWNlaXB0K2Nvc2UEWCs3cVp0c0d1T3kxQ0V0Xy0zbHpUYnFiMmxOQW13RnRRbTRjeDlPTDNGbVVBD6MBeCs3cVp0c0d1T3kxQ0V0Xy0zbHpUYnFiMmxOQW13RnRRbTRjeDlPTDNGbVVBAngaMDFNNkFCRUM2QVhIQThDU0M1MVlTTjZIMFcGGmrmlUwZAYsBoRkBjKEggUSDAQCA9lhAif3NPIroyRQnp5borLZjP3Xw9PbBiO33BmVnQA3p8pp4lZzSZ7HMLIlVWhWf217P8KptHUMpSoKGQMSMuTCyDVkDg65lYWdlbnShaXNwaWZmZV9pZHggc3BpZmZlOi8vdmVjdG9ycy5leGFtcGxlL2FnZW50LzFmZWZmZWN0omZzdGF0dXNpY29uZmlybWVkb3Jlc3BvbnNlX2RpZ2VzdHhHc2hhMjU2OjNkMThlYjA3MTZlYzdkOGQxMDFiMWE3NzdmNWU2ZjJlNWQxYjgwZGZhOWI5OTlmODNlNmJiMDUzNDVmMjNjMjhncHJpdmFjeaJvc2FsdF9jb21taXRtZW50eEdzaGEyNTY6YzA3MjMwZjcwNTNiZmI4NjJmYjIyNGIwZmY2NDI0MjBlYTIzN2ZlYjBhZmNiYTIyNmI1N2UwYjA1NjgyNWUxZnRkaXNjbG9zdXJlX3BvbGljeV9pZHgeaW8uaGl2ZW1pbmQuZGlzY2xvc3VyZS5kZWZhdWx0Z3Byb2ZpbGV4H3VybjpoaXZlbWluZDpyZWNlaXB0czpjYXBzdWxlOjFpYWN0aW9uX2lkeBowMU02QUJFQzZBWEhBOENTQzUxWVNONkgwV2lhc3N1cmFuY2Wia2xlZGdlcl9tb2RlaGFuY2hvcmVkcGF0dGVzdGF0aW9uX21vZGVkbm9uZWljYXVzYWxpdHmgaWlzc3VlZF9hdHgYMjAyNi0xMS0wMVQwMToyNjozNS45NzhaaW9wZXJhdGlvbqNka2luZGNtY3BmbWV0aG9kcXRvb2xzL2NhbGw6cmVmdW5kaXJpc2tfdGllcmlmaW5hbmNpYWxpcHJpbmNpcGFsoXJzdWJqZWN0X2NvbW1pdG1lbnR4R3NoYTI1NjoxNzIxMzA4NDJiZDJhZGZhMjI5ZWIxNGI2YjgwMTk2NmY4MGIwZGE0ODQ3MTAwMmQ2ODJkNjM3OWM2NGVmNTc2amNhcHN1bGVfaWR4R3NoYTI1Njo5NWZkZmEyM2EzNjI3M2MwNGU1OTFmNmYyMjBhMDZhOGEyYTcwNzVhZmI2NTFiY2YxNjBlYWEzODk3N2JiMzlka2Rpc3Bvc2l0aW9uoWlhdXRob3JpdHlvdmVjdG9yLWRlY2lzaW9ubXZlcmRpY3RfY2xhc3NoZXhlY3V0ZWRucmVxdWVzdF9kaWdlc3R4R3NoYTI1Njo4OWU0ZWI1NzBlYDdhZjA4MTY2MjliNTFlNjIxM2I1ODU1M2ExMGNjMzZjODQxMDFiZWEyY2M2MGI3NjdhN2Y2WED5pRNIAYp4ubY11bOrLvU0xThWGqFZiy35AVPFcLR/1O/rNO44Vxm0YYms8EAFYErM6ut201+FShWU8v6TpQYH",
+      "checkpoint": "vectors.hivemind.example/2026\n1\nO9neq9xk/LWCf3mQjaqr0LsANa8o+NJMR96iHxDKQac=\n\n— vectors.hivemind.example/2026 OwnrunbQp4k61Si/gp0xJM77CBid3eE6I8VdUfM1gN66grTPaZlANS9DkbjEJs0OSZeqZLOFLV29DP+ga5zUYNNqRgY=\n— w0.vectors.example VG9n0QAAAABq5pVMDqhvCVZWqUkzj+U0XzKyQ1AKU06m5N+IUxTlJNsRH9V7OPagGgWUOt60G/aKLMDqp7QLt1X3wdpBmD8kcjdCBQ==\n— w1.vectors.example hHMx4AAAAABq5pVM3iAHDOnp9cDsuOBZlpOIEzFU7+B+OT8OlfQdvGDTrdhjOPWQR7Bsv1g+I1e/yXRaC9HrgkV1ZvkEroJGAxChDw==\n— w2.vectors.example on/IyQAAAABq5pVMvrz2zghUB7qbQ/MBnWvWzKSALwiM34JjTwsD53UkL4FfUakW3pMLnDxUIaumo1CF7uHPbgt97NIhqsjGldNJAg==\n"
+    },
+    {
+      "name": "revoked-issuer",
+      "expect": "FAILED",
+      "statement": "0oRYpKQBJgN4MmFwcGxpY2F0aW9uL3ZuZC5oaXZlbWluZC5hZ2VudC1hY3Rpb24tY2Fwc3VsZStjYm9yBFgrTEhEbHc0dmp0X19Mc1Awczk5NXYweFE5ZU1BTVVFVG5UenBnem13N3VKaw+jAXdodHRwczovL3ZlY3RvcnMuZXhhbXBsZQJ4GjAxTTZBQkVDQTFYN05QNVpBMjlDN1JOOVY1Bhpo53gAoFkDg65lYWdlbnShaXNwaWZmZV9pZHggc3BpZmZlOi8vdmVjdG9ycy5leGFtcGxlL2FnZW50LzFmZWZmZWN0omZzdGF0dXNpY29uZmlybWVkb3Jlc3BvbnNlX2RpZ2VzdHhHc2hhMjU2OmQ4ZjZiNzM5ODczMTY4Yjk0MjdkZGJlOTYwMmUxZTg0ODQxNTkxZTkyNjhjNWEzNWVkNjJjMTU4MjA1NDdlMTZncHJpdmFjeaJvc2FsdF9jb21taXRtZW50eEdzaGEyNTY6YzlhYzhmOGI3YzRmNmEwNTI3YjY2NWRhMDcwZDg1MzUxZDk1MTJhNTNkM2M1NTFiYjE1MjIxZTE2Nzg4ODJjNXRkaXNjbG9zdXJlX3BvbGljeV9pZHgeaW8uaGl2ZW1pbmQuZGlzY2xvc3VyZS5kZWZhdWx0Z3Byb2ZpbGV4H3VybjpoaXZlbWluZDpyZWNlaXB0czpjYXBzdWxlOjFpYWN0aW9uX2lkeBowMU02QUJFQ0ExWDdOUDVaQTI5QzdSTjlWNWlhc3N1cmFuY2Wia2xlZGdlcl9tb2RlaGFuY2hvcmVkcGF0dGVzdGF0aW9uX21vZGVkbm9uZWljYXVzYWxpdHmgaWlzc3VlZF9hdHgYMjAyNi0xMS0wMVQwMToyNjozNi4wOTdaaW9wZXJhdGlvbqNka2luZGNtY3BmbWV0aG9kcXRvb2xzL2NhbGw6cmVmdW5kaXJpc2tfdGllcmlmaW5hbmNpYWxpcHJpbmNpcGFsoXJzdWJqZWN0X2NvbW1pdG1lbnR4R3NoYTI1NjowNGYzZDU3YTM1ZDczNzEyOTNlNzJhYThiMTRkMjk0ZGQzOTljNzg2YWRkZGIxYTk3NzU3MTZhMWQ5N2I4NDAyamNhcHN1bGVfaWR4R3NoYTI1NjpiZTk0NmQyMmEwNzdiMWYwOGY4OTAyMDI2ODVjMGIzY2UyNmIyYzQzNWM4M2U0Mzc1MWRlM2JkZDRhNTZhMmEza2Rpc3Bvc2l0aW9uoWlhdXRob3JpdHlvdmVjdG9yLWRlY2lzaW9ubXZlcmRpY3RfY2xhc3NoZXhlY3V0ZWRucmVxdWVzdF9kaWdlc3R4R3NoYTI1NjpjMDQ2NDU2ZmFkMDkxZmRlZDVmYjhmNzVmZWJhZmU4Mjc3YzNjZmNkZmEyMGQxNmUxNjViZDVhMDY1NDkyOWFkWEDLnFNPZlDJiLDaZGWbC9dFwMK/i/JWJSQVCJfrvLp6/YfbeTWbBg6PPn1uYvbxYvBbegcgHnO8+6K7bVFmsfes",
+      "checkpoint": "vectors.hivemind.example/2026\n2\naChQ/qeTMqYOQQssXSZSRsIiyOkB8ZGVYwf9UNshrTs=\n\n— vectors.hivemind.example/2026 OwnrujkR3jNEAfaAsVO9Nq/5jh4USa1K9kJnu8szg/KMynoX3X45DWbM0hHDnDuPPycX1WnCTQX/cJPtgvIOjLH3gA0=\n— w0.vectors.example VG9n0QAAAABq5pVMOp6zZKj6BuwtmzKeUavFcjrC+Fzquqj6LkJFyxDKixgx7Jy0+kdN+7G1X27yXq65c//Wd5pew/1C8D/j8c95Dg==\n— w1.vectors.example hHMx4AAAAABq5pVMpUeDgahhQnr6lrG78FlBt7hRdxZ0n74nsv4OpOG7zzVGyd9TeSjqX/bgPY0cQZfbcy0x25I5QzKd/JZ+Z9INDw==\n— w2.vectors.example on/IyQAAAABq5pVMoYptNMHQQ3E4W8F5Sxgf1DOxcepVMahsZj6NIuchEAd6CYU+/XbIjLK53+l6Aek4GzpbVmVAud1PdT8FMbM8BA==\n",
+      "revoked_kids": [
+        "LHDlw4vjt__LsP0s995v0xQ9eMAMUETnTzpgzmw7uJk"
+      ]
+    },
+    {
+      "name": "unknown-issuer",
+      "expect": "FAILED",
+      "statement": "0oRYpKQBJgN4MmFwcGxpY2F0aW9uL3ZuZC5oaXZlbWluZC5hZ2VudC1hY3Rpb24tY2Fwc3VsZStjYm9yBFgrZmxNN1VJenFvd1NldzhvT21NdFhnekYyckVuSTBsemhQSHJGanJTd3VCaw+jAXdodHRwczovL3ZlY3RvcnMuZXhhbXBsZQJ4GjAxTTZBQkVDQTI5Slk3NjJBV05NV0Y0QkdOBhpo53gAoFkDg65lYWdlbnShaXNwaWZmZV9pZHggc3BpZmZlOi8vdmVjdG9ycy5leGFtcGxlL2FnZW50LzFmZWZmZWN0omZzdGF0dXNpY29uZmlybWVkb3Jlc3BvbnNlX2RpZ2VzdHhHc2hhMjU2OmE3Y2UwNDRkYzgxN2YyZGYwMzc0OTFjZTFlNzRhZmI0Y2YxOTZmNWMzOThkMGE4NjNjY2U2ZWJlODk3OTY3MTJncHJpdmFjeaJvc2FsdF9jb21taXRtZW50eEdzaGEyNTY6OWYxYTRkNTgwZjRjMzg2NGJlYWY0MTc0ZWU2MjZkYjE0ODg4OTdlM2ViYjg4NTJiOTJiNTdlODQ2MDc2OWY2NXRkaXNjbG9zdXJlX3BvbGljeV9pZHgeaW8uaGl2ZW1pbmQuZGlzY2xvc3VyZS5kZWZhdWx0Z3Byb2ZpbGV4H3VybjpoaXZlbWluZDpyZWNlaXB0czpjYXBzdWxlOjFpYWN0aW9uX2lkeBowMU02QUJFQ0EyOUpZNzYyQVdOTVdGNEJHTmlhc3N1cmFuY2Wia2xlZGdlcl9tb2RlaGFuY2hvcmVkcGF0dGVzdGF0aW9uX21vZGVkbm9uZWljYXVzYWxpdHmgaWlzc3VlZF9hdHgYMjAyNi0xMS0wMVQwMToyNjozNi4wOThaaW9wZXJhdGlvbqNka2luZGNtY3BmbWV0aG9kcXRvb2xzL2NhbGw6cmVmdW5kaXJpc2tfdGllcmlmaW5hbmNpYWxpcHJpbmNpcGFsoXJzdWJqZWN0X2NvbW1pdG1lbnR4R3NoYTI1NjpmZDE2MjFhZDg1YWM5ZjVhZDYzMTRjMGE5NGNiZDExZmM1NjBjOTEzMmNlMTkzNDdiZjZiNWZhZmZkNjliZmRhamNhcHN1bGVfaWR4R3NoYTI1NjpmMzMxODgyZWJhNTIwODFhMTNlMjVlNWQ1MjVkODlhZTMwNWFmNzU4MWVjZjgxNzkwZTA1MTViNDEwYmU2ZmU2a2Rpc3Bvc2l0aW9uoWlhdXRob3JpdHlvdmVjdG9yLWRlY2lzaW9ubXZlcmRpY3RfY2xhc3NoZXhlY3V0ZWRucmVxdWVzdF9kaWdlc3R4R3NoYTI1NjpjNWFmZGQwODQ1MzMzMjcwOTE2ZjRjNjFlMTRiYTI4ZmYxNmY2OWVjM2Q3NGE5OTZkMmY1MDI2MWE1MDExN2FkWEBkPnvLuKEaq2zXr8UhMiuGmZavzy4W1dexgxINZlUVVvC9JTAm+8KKXgRm+G0xFEAB+YdAAA4PKydh1vQ4gI1f",
+      "checkpoint": "vectors.hivemind.example/2026\n2\naChQ/qeTMqYOQQssXSZSRsIiyOkB8ZGVYwf9UNshrTs=\n\n— vectors.hivemind.example/2026 OwnrujkR3jNEAfaAsVO9Nq/5jh4USa1K9kJnu8szg/KMynoX3X45DWbM0hHDnDuPPycX1WnCTQX/cJPtgvIOjLH3gA0=\n— w0.vectors.example VG9n0QAAAABq5pVMOp6zZKj6BuwtmzKeUavFcjrC+Fzquqj6LkJFyxDKixgx7Jy0+kdN+7G1X27yXq65c//Wd5pew/1C8D/j8c95Dg==\n— w1.vectors.example hHMx4AAAAABq5pVMpUeDgahhQnr6lrG78FlBt7hRdxZ0n74nsv4OpOG7zzVGyd9TeSjqX/bgPY0cQZfbcy0x25I5QzKd/JZ+Z9INDw==\n— w2.vectors.example on/IyQAAAABq5pVMoYptNMHQQ3E4W8F5Sxgf1DOxcepVMahsZj6NIuchEAd6CYU+/XbIjLK53+l6Aek4GzpbVmVAud1PdT8FMbM8BA==\n",
+      "drop_issuers": [
+        "flM7UIzqowSew8oOmMtXgzF2rEnI0lzhPHrFjrSwuBk"
+      ]
+    },
+    {
+      "name": "missing-receipt-anchored-claim",
+      "expect": "FAILED",
+      "statement": "0oRYpKQBJgN4MmFwcGxpY2F0aW9uL3ZuZC5oaXZlbWluZC5hZ2VudC1hY3Rpb24tY2Fwc3VsZStjYm9yBFgrZmxNN1VJenFvd1NldzhvT21NdFhnekYyckVuSTBsemhQSHJGanJTd3VCaw+jAXdodHRwczovL3ZlY3RvcnMuZXhhbXBsZQJ4GjAxTTZBQkVDQTI0NFNGQTIwOFBZRTFZUTg1Bhpo53gAoFkDg65lYWdlbnShaXNwaWZmZV9pZHggc3BpZmZlOi8vdmVjdG9ycy5leGFtcGxlL2FnZW50LzFmZWZmZWN0omZzdGF0dXNpY29uZmlybWVkb3Jlc3BvbnNlX2RpZ2VzdHhHc2hhMjU2Ojg1M2MwODEyNDRiYTljODRmMGNjZjYyOTRjNTA4ODgxM2ZlYjk4MDcwYjE2MWFmN2Q5NWNlYzRmNWZlYjYzMTVncHJpdmFjeaJvc2FsdF9jb21taXRtZW50eEdzaGEyNTY6MTI1YjdiMGQ4ZjNiYzdmNjJmZDk4YTExMDA2OWIxNzFiN2Q4NzQxMzZiZThkOGVkMzliNWNlODI3ZjYwYWQ0ZnRkaXNjbG9zdXJlX3BvbGljeV9pZHgeaW8uaGl2ZW1pbmQuZGlzY2xvc3VyZS5kZWZhdWx0Z3Byb2ZpbGV4H3VybjpoaXZlbWluZDpyZWNlaXB0czpjYXBzdWxlOjFpYWN0aW9uX2lkeBowMU02QUJFQ0EyNDRTRkEyMDhQWUUxWVE4NWlhc3N1cmFuY2Wia2xlZGdlcl9tb2RlaGFuY2hvcmVkcGF0dGVzdGF0aW9uX21vZGVkbm9uZWljYXVzYWxpdHmgaWlzc3VlZF9hdHgYMjAyNi0xMS0wMVQwMToyNjozNi4wOThaaW9wZXJhdGlvbqNka2luZGNtY3BmbWV0aG9kcXRvb2xzL2NhbGw6cmVmdW5kaXJpc2tfdGllcmlmaW5hbmNpYWxpcHJpbmNpcGFsoXJzdWJqZWN0X2NvbW1pdG1lbnR4R3NoYTI1Njo1ZmU3ZDA0MjkzYmE1ZjdjZGIyYTE4NWQ0YmIwMTFkMThlNDVkNWQ0ZDRkZDVlY2E4MWVjOWY2ZTU4MjgwNWFlamNhcHN1bGVfaWR4R3NoYTI1NjplMjA1ZjViNTFiZTExZDg2YjQ0NWI0NWU3ZWI3NjA1NDNmYmE0Mzk1MDgxNDIzZTNmYjQxZTYyOGMxZjg5ZWZka2Rpc3Bvc2l0aW9uoWlhdXRob3JpdHlvdmVjdG9yLWRlY2lzaW9ubXZlcmRpY3RfY2xhc3NoZXhlY3V0ZWRucmVxdWVzdF9kaWdlc3R4R3NoYTI1NjoxMWIyNjNlYTVhMDEyOTRmYmI2ZmMyNDgyMTYzYTk5ODVjODNiMjIyZTc4NTRkZmIyODQwOTlhYWUwZmI2MTNkWEDexv02ZbX/tXR2rSY+3C0MCnSsgTCB0i8Dboezr1C8Uc41C5ND17WzUqufZH/8dFBXNXntbCRd7VTgYdWMafLn",
+      "checkpoint": "vectors.hivemind.example/2026\n2\naChQ/qeTMqYOQQssXSZSRsIiyOkB8ZGVYwf9UNshrTs=\n\n— vectors.hivemind.example/2026 OwnrujkR3jNEAfaAsVO9Nq/5jh4USa1K9kJnu8szg/KMynoX3X45DWbM0hHDnDuPPycX1WnCTQX/cJPtgvIOjLH3gA0=\n— w0.vectors.example VG9n0QAAAABq5pVMOp6zZKj6BuwtmzKeUavFcjrC+Fzquqj6LkJFyxDKixgx7Jy0+kdN+7G1X27yXq65c//Wd5pew/1C8D/j8c95Dg==\n— w1.vectors.example hHMx4AAAAABq5pVMpUeDgahhQnr6lrG78FlBt7hRdxZ0n74nsv4OpOG7zzVGyd9TeSjqX/bgPY0cQZfbcy0x25I5QzKd/JZ+Z9INDw==\n— w2.vectors.example on/IyQAAAABq5pVMoYptNMHQQ3E4W8F5Sxgf1DOxcepVMahsZj6NIuchEAd6CYU+/XbIjLK53+l6Aek4GzpbVmVAud1PdT8FMbM8BA==\n"
+    },
+    {
+      "name": "equivocated-checkpoint",
+      "expect": "FAILED",
+      "statement": "0oRYpKQBJgN4MmFwcGxpY2F0aW9uL3ZuZC5oaXZlbWluZC5hZ2VudC1hY3Rpb24tY2Fwc3VsZStjYm9yBFgrZmxNN1VJenFvd1NldzhvT21NdFhnekYyckVuSTBsemhQSHJGanJTd3VCaw+jAXdodHRwczovL3ZlY3RvcnMuZXhhbXBsZQJ4GjAxTTZBQkVDNkFYSEE4Q1NDNTFZU042SDBXBhpo53gAoRkBioFY/NKEWKmlAScDeB5hcHBsaWNhdGlvbi9zY2l0dC1yZWNlaXB0K2Nvc2UEWCs3cVp0c0d1T3kxQ0V0Xy0zbHpUYnFiMmxOQW13RnRRbTRjeDlPTDNGbVVBD6MBeCs3cVp0c0d1T3kxQ0V0Xy0zbHpUYnFiMmxOQW13RnRRbTRjeDlPTDNGbVVBAngaMDFNNkFCRUM2QVhIQThDU0M1MVlTTjZIMFcGGmrmlUwZAYsBoRkBjKEggUSDAQCA9lhAif3NPIroyRQnp5borLZjP3Xw9PbBiO33BmVnQA3p8pp4lZzSZ7HMLIlVWhWf217P8KptHUMpSoKGQMSMuTCyDVkDg65lYWdlbnShaXNwaWZmZV9pZHggc3BpZmZlOi8vdmVjdG9ycy5leGFtcGxlL2FnZW50LzFmZWZmZWN0omZzdGF0dXNpY29uZmlybWVkb3Jlc3BvbnNlX2RpZ2VzdHhHc2hhMjU2OjNkMThlYjA3MTZlYzdkOGQxMDFiMWE3NzdmNWU2ZjJlNWQxYjgwZGZhOWI5OTlmODNlNmJiMDUzNDVmMjNjMjhncHJpdmFjeaJvc2FsdF9jb21taXRtZW50eEdzaGEyNTY6YzA3MjMwZjcwNTNiZmI4NjJmYjIyNGIwZmY2NDI0MjBlYTIzN2ZlYjBhZmNiYTIyNmI1N2UwYjA1NjgyNWUxZnRkaXNjbG9zdXJlX3BvbGljeV9pZHgeaW8uaGl2ZW1pbmQuZGlzY2xvc3VyZS5kZWZhdWx0Z3Byb2ZpbGV4H3VybjpoaXZlbWluZDpyZWNlaXB0czpjYXBzdWxlOjFpYWN0aW9uX2lkeBowMU02QUJFQzZBWEhBOENTQzUxWVNONkgwV2lhc3N1cmFuY2Wia2xlZGdlcl9tb2RlaGFuY2hvcmVkcGF0dGVzdGF0aW9uX21vZGVkbm9uZWljYXVzYWxpdHmgaWlzc3VlZF9hdHgYMjAyNi0xMS0wMVQwMToyNjozNS45NzhaaW9wZXJhdGlvbqNka2luZGNtY3BmbWV0aG9kcXRvb2xzL2NhbGw6cmVmdW5kaXJpc2tfdGllcmlmaW5hbmNpYWxpcHJpbmNpcGFsoXJzdWJqZWN0X2NvbW1pdG1lbnR4R3NoYTI1NjoxNzIxMzA4NDJiZDJhZGZhMjI5ZWIxNGI2YjgwMTk2NmY4MGIwZGE0ODQ3MTAwMmQ2ODJkNjM3OWM2NGVmNTc2amNhcHN1bGVfaWR4R3NoYTI1Njo5NWZkZmEyM2EzNjI3M2MwNGU1OTFmNmYyMjBhMDZhOGEyYTcwNzVhZmI2NTFiY2YxNjBlYWEzODk3N2JiMzlka2Rpc3Bvc2l0aW9uoWlhdXRob3JpdHlvdmVjdG9yLWRlY2lzaW9ubXZlcmRpY3RfY2xhc3NoZXhlY3V0ZWRucmVxdWVzdF9kaWdlc3R4R3NoYTI1Njo4OWU0ZWI1NzBlYTdhZjA4MTY2MjliNTFlNjIxM2I1ODU1M2ExMGNjMzZjODQxMDFiZWEyY2M2MGI3NjdhN2Y2WED5pRNIAYp4ubY11bOrLvU0xThWGqFZiy35AVPFcLR/1O/rNO44Vxm0YYms8EAFYErM6ut201+FShWU8v6TpQYH",
+      "checkpoint": "vectors.hivemind.example/2026\n2\nFHSYL2j1/7gAPB5RqQvAL+YusJuHwHiakbcM7DJxNnU=\n\n— vectors.hivemind.example/2026 OwnruiP+YHsMtJv/JE0GycuguxrUTllegRnFYvT6FvCx9VNXOpdG5h2OSo8nDoF1JVyrpcILDv7vFhUGvrmeq1Oz6gk=\n",
+      "detail": "same size class, different root: inclusion must fail and witnesses must refuse the fork"
+    },
+    {
+      "name": "disclosure-wrong-value",
+      "expect": "FAILED",
+      "statement": "0oRYpKQBJgN4MmFwcGxpY2F0aW9uL3ZuZC5oaXZlbWluZC5hZ2VudC1hY3Rpb24tY2Fwc3VsZStjYm9yBFgrZmxNN1VJenFvd1NldzhvT21NdFhnekYyckVuSTBsemhQSHJGanJTd3VCaw+jAXdodHRwczovL3ZlY3RvcnMuZXhhbXBsZQJ4GjAxTTZBQkVDNkFYSEE4Q1NDNTFZU042SDBXBhpo53gAoRkBioFY/NKEWKmlAScDeB5hcHBsaWNhdGlvbi9zY2l0dC1yZWNlaXB0K2Nvc2UEWCs3cVp0c0d1T3kxQ0V0Xy0zbHpUYnFiMmxOQW13RnRRbTRjeDlPTDNGbVVBD6MBeCs3cVp0c0d1T3kxQ0V0Xy0zbHpUYnFiMmxOQW13RnRRbTRjeDlPTDNGbVVBAngaMDFNNkFCRUM2QVhIQThDU0M1MVlTTjZIMFcGGmrmlUwZAYsBoRkBjKEggUSDAQCA9lhAif3NPIroyRQnp5borLZjP3Xw9PbBiO33BmVnQA3p8pp4lZzSZ7HMLIlVWhWf217P8KptHUMpSoKGQMSMuTCyDVkDg65lYWdlbnShaXNwaWZmZV9pZHggc3BpZmZlOi8vdmVjdG9ycy5leGFtcGxlL2FnZW50LzFmZWZmZWN0omZzdGF0dXNpY29uZmlybWVkb3Jlc3BvbnNlX2RpZ2VzdHhHc2hhMjU2OjNkMThlYjA3MTZlYzdkOGQxMDFiMWE3NzdmNWU2ZjJlNWQxYjgwZGZhOWI5OTlmODNlNmJiMDUzNDVmMjNjMjhncHJpdmFjeaJvc2FsdF9jb21taXRtZW50eEdzaGEyNTY6YzA3MjMwZjcwNTNiZmI4NjJmYjIyNGIwZmY2NDI0MjBlYTIzN2ZlYjBhZmNiYTIyNmI1N2UwYjA1NjgyNWUxZnRkaXNjbG9zdXJlX3BvbGljeV9pZHgeaW8uaGl2ZW1pbmQuZGlzY2xvc3VyZS5kZWZhdWx0Z3Byb2ZpbGV4H3VybjpoaXZlbWluZDpyZWNlaXB0czpjYXBzdWxlOjFpYWN0aW9uX2lkeBowMU02QUJFQzZBWEhBOENTQzUxWVNONkgwV2lhc3N1cmFuY2Wia2xlZGdlcl9tb2RlaGFuY2hvcmVkcGF0dGVzdGF0aW9uX21vZGVkbm9uZWljYXVzYWxpdHmgaWlzc3VlZF9hdHgYMjAyNi0xMS0wMVQwMToyNjozNS45NzhaaW9wZXJhdGlvbqNka2luZGNtY3BmbWV0aG9kcXRvb2xzL2NhbGw6cmVmdW5kaXJpc2tfdGllcmlmaW5hbmNpYWxpcHJpbmNpcGFsoXJzdWJqZWN0X2NvbW1pdG1lbnR4R3NoYTI1NjoxNzIxMzA4NDJiZDJhZGZhMjI5ZWIxNGI2YjgwMTk2NmY4MGIwZGE0ODQ3MTAwMmQ2ODJkNjM3OWM2NGVmNTc2amNhcHN1bGVfaWR4R3NoYTI1Njo5NWZkZmEyM2EzNjI3M2MwNGU1OTFmNmYyMjBhMDZhOGEyYTcwNzVhZmI2NTFiY2YxNjBlYWEzODk3N2JiMzlka2Rpc3Bvc2l0aW9uoWlhdXRob3JpdHlvdmVjdG9yLWRlY2lzaW9ubXZlcmRpY3RfY2xhc3NoZXhlY3V0ZWRucmVxdWVzdF9kaWdlc3R4R3NoYTI1Njo4OWU0ZWI1NzBlYTdhZjA4MTY2MjliNTFlNjIxM2I1ODU1M2ExMGNjMzZjODQxMDFiZWEyY2M2MGI3NjdhN2Y2WED5pRNIAYp4ubY11bOrLvU0xThWGqFZiy35AVPFcLR/1O/rNO44Vxm0YYms8EAFYErM6ut201+FShWU8v6TpQYH",
+      "checkpoint": "vectors.hivemind.example/2026\n1\nO9neq9xk/LWCf3mQjaqr0LsANa8o+NJMR96iHxDKQac=\n\n— vectors.hivemind.example/2026 OwnrunbQp4k61Si/gp0xJM77CBid3eE6I8VdUfM1gN66grTPaZlANS9DkbjEJs0OSZeqZLOFLV29DP+ga5zUYNNqRgY=\n— w0.vectors.example VG9n0QAAAABq5pVMDqhvCVZWqUkzj+U0XzKyQ1AKU06m5N+IUxTlJNsRH9V7OPagGgWUOt60G/aKLMDqp7QLt1X3wdpBmD8kcjdCBQ==\n— w1.vectors.example hHMx4AAAAABq5pVM3iAHDOnp9cDsuOBZlpOIEzFU7+B+OT8OlfQdvGDTrdhjOPWQR7Bsv1g+I1e/yXRaC9HrgkV1ZvkEroJGAxChDw==\n— w2.vectors.example on/IyQAAAABq5pVMvrz2zghUB7qbQ/MBnWvWzKSALwiM34JjTwsD53UkL4FfUakW3pMLnDxUIaumo1CF7uHPbgt97NIhqsjGldNJAg==\n",
+      "disclosure": {
+        "capsule_id": "sha256:95fdfa23a36273c04e591f6f220a06a8a2a7075afb651bcf160eaa38977bb39d",
+        "salt": "zCu2nNud-YRV_jtcOXJIjliNbB1U_0tukpDvpHjrfDU",
+        "fields": {
+          "principal.subject": {
+            "user": "vector-user"
+          },
+          "request": {
+            "amount_minor": 1,
+            "currency": "USD"
+          },
+          "response": {
+            "status": "succeeded"
+          }
+        }
+      }
+    },
+    {
+      "name": "batch-member-valid",
+      "expect": "VERIFIED",
+      "statement": "0oRYbKMBJgN4OGFwcGxpY2F0aW9uL3ZuZC5oaXZlbWluZC5hZ2VudC1hY3Rpb24tY2Fwc3VsZS1iYXRjaCtjYm9yBFgrZmxNN1VJenFvd1NldzhvT21NdFhnekYyckVuSTBsemhQSHJGanJTd3VCa6EZAYqBWQFM0oRY1qUBJwN4HmFwcGxpY2F0aW9uL3NjaXR0LXJlY2VpcHQrY29zZQRYKzdxWnRzR3VPeTFDRXRfLTNselRicWIybE5BbXdGdFFtNGN4OU9MM0ZtVUEPowF4KzdxWnRzR3VPeTFDRXRfLTNselRicWIybE5BbXdGdFFtNGN4OU9MM0ZtVUECeEdzaGEyNTY6YzkzMDU0ZGNjYmY4ZjIzZTVlMDJkMTkxMzMxNmZhZGY4ZWRiMTg4NGJhMGUzZjYxMzVhN2UwYTQ1OTQ5NGM0ZAYaauaVTBkBiwGhGQGMoSCBWCaDAwKBWCBoKFD+p5Mypg5BCyxdJlJGwiLI6QHxkZVjB/1Q2yGtO/ZYQHoXVJXrtMkTj3EmFOTkWSe+FgwdgakuvHmc2C6jRMiPvqSyjdy94OMdl8Rw+hkL8geEga83bxeIT+vDd86AbAtZAS6nZWNvdW50BGdwcm9maWxleCV1cm46aGl2ZW1pbmQ6cmVjZWlwdHM6Y2Fwc3VsZS1iYXRjaDoxamJhdGNoX3Jvb3R4R3NoYTI1NjozOTZhNzUxOTAxY2JkODNmY2Y3OWIzZjRjZTc3ODI3YWVmMzFmMTJlYjNjNTI3ZWUyOGM2ODJkZTAyMjA5OTRkandpbmRvd19lbmR4GDIwMjYtMTEtMDFUMDE6MjY6MzYuMTU2Wmx3aW5kb3dfc3RhcnR4GDIwMjYtMTEtMDFUMDE6MjY6MzYuMTU0Wm5sYXN0X2FjdGlvbl9pZHgaMDFNNkFCRUNCV1IwUEZUUk1YMFc5UTA4NFJvZmlyc3RfYWN0aW9uX2lkeBowMU02QUJFQ0JUMzA5NzQ4V0FUNFYxUUVQQVhAcwAYc/jnAVpeLymriT2p48W52P/J5qRNE+GIVb3IMYY/ImjDBnavdrAZ4tDhMLJoOuypO48A5mmqnfd9oh4fKA==",
+      "checkpoint": "vectors.hivemind.example/2026\n3\ntTTC0GsSkzsxG1yTtmPGONLTNkYvFa1z8QGlaCOh27g=\n\n— vectors.hivemind.example/2026 OwnrupWZnep3ZiO682LAM+AVZdyfcoJ9qIUO5MVUr2rT7Tj9WfJwTIFq8ZIBJrwqR200LoNygEmzcxOZ8zn2ArmzFw4=\n— w0.vectors.example VG9n0QAAAABq5pVMqPAc8xaI0AJhfwiRnAxGpgtDMsGfBDzP1xI9IynuscnY5zaM8FFhwv3SyK4BrXoDhwiad2PMWPhyB/5BJa0LAw==\n— w1.vectors.example hHMx4AAAAABq5pVMZAFoOJB4RyEr8NJ5QsrRda4/2w/7PBBMN2RlGRhntwWj1FUvnIyhEBsyySdkzEDO8u0BN0zfuH/EHmKzH2QPAQ==\n— w2.vectors.example on/IyQAAAABq5pVMS2rTM3lZbrBJQxFMZ9pDLECrth7x6WZzkSkxrd1wLFg30LNaSysfOM7rrXGv2XuACV52TaqwAa0cF7kM9d6MAg==\n",
+      "batch": {
+        "capsule": "rmVhZ2VudKFpc3BpZmZlX2lkeCBzcGlmZmU6Ly92ZWN0b3JzLmV4YW1wbGUvYWdlbnQvMWZlZmZlY3ShZnN0YXR1c2Rub25lZ3ByaXZhY3mib3NhbHRfY29tbWl0bWVudHhHc2hhMjU2OmZiNTQ0OWRlNzEyNTc5OWU4MzRiMmRhNDMyMGEzYjUyMTA0YmVkMDhiZGMyMDUxODM3YTAwZWEwNmQ3ZDFkMzV0ZGlzY2xvc3VyZV9wb2xpY3lfaWR4HmlvLmhpdmVtaW5kLmRpc2Nsb3N1cmUuZGVmYXVsdGdwcm9maWxleB91cm46aGl2ZW1pbmQ6cmVjZWlwdHM6Y2Fwc3VsZToxaWFjdGlvbl9pZHgaMDFNNkFCRUNCVkpNQVdUNk1XWjJURTU5TURpYXNzdXJhbmNlomtsZWRnZXJfbW9kZWhhbmNob3JlZHBhdHRlc3RhdGlvbl9tb2RlZG5vbmVpY2F1c2FsaXR5oGlpc3N1ZWRfYXR4GDIwMjYtMTEtMDFUMDE6MjY6MzYuMTU1WmlvcGVyYXRpb26jZGtpbmRjbWNwZm1ldGhvZHF0b29scy9jYWxsOnJlZnVuZGlyaXNrX3RpZXJpZmluYW5jaWFsaXByaW5jaXBhbKFyc3ViamVjdF9jb21taXRtZW50eEdzaGEyNTY6MzZjNzZiZGY4NzdiMjc3NjQzOTliZmYzZTM2YmQ2MWRmYmNhN2E4ZTM4NWM4ZWNmNGZmY2E5MDQ0MWFmMWU0M2pjYXBzdWxlX2lkeEdzaGEyNTY6ZDdhYmFhMTZmZjVkZjk0YWU2YmJhODdkNTAyNDQ2ZTI0ZTM1ZmVlODI5NDczYjc0Y2YxZWY1ODRhN2FkNWQxZWtkaXNwb3NpdGlvbqFpYXV0aG9yaXR5b3ZlY3Rvci1kZWNpc2lvbm12ZXJkaWN0X2NsYXNzZ2Jsb2NrZWRucmVxdWVzdF9kaWdlc3R4R3NoYTI1NjozNDkwYjNiZmYwNjljYjg1OTczMzIwMWM1YjZkMThlOGI3MDUxZTc2MTFkYjE0MjRkOTI3OTQyMGRkNGNhMzli",
+        "proof": {
+          "treeSize": 4,
+          "leafIndex": 2,
+          "hashes": [
+            "8/iG+NJYoVlAzeBYjgkdoWCikQ/Idhgvp5Mfe68A08o=",
+            "kXznK6A+xaTM5UedIFd/k9zaeD7tDxfTwyuxZlqFntw="
+          ]
+        }
+      }
+    },
+    {
+      "name": "batch-member-foreign",
+      "expect": "FAILED",
+      "statement": "0oRYbKMBJgN4OGFwcGxpY2F0aW9uL3ZuZC5oaXZlbWluZC5hZ2VudC1hY3Rpb24tY2Fwc3VsZS1iYXRjaCtjYm9yBFgrZmxNN1VJenFvd1NldzhvT21NdFhnekYyckVuSTBsemhQSHJGanJTd3VCa6EZAYqBWQFM0oRY1qUBJwN4HmFwcGxpY2F0aW9uL3NjaXR0LXJlY2VpcHQrY29zZQRYKzdxWnRzR3VPeTFDRXRfLTNselRicWIybE5BbXdGdFFtNGN4OU9MM0ZtVUEPowF4KzdxWnRzR3VPeTFDRXRfLTNselRicWIybE5BbXdGdFFtNGN4OU9MM0ZtVUECeEdzaGEyNTY6YzkzMDU0ZGNjYmY4ZjIzZTVlMDJkMTkxMzMxNmZhZGY4ZWRiMTg4NGJhMGUzZjYxMzVhN2UwYTQ1OTQ5NGM0ZAYaauaVTBkBiwGhGQGMoSCBWCaDAwKBWCBoKFD+p5Mypg5BCyxdJlJGwiLI6QHxkZVjB/1Q2yGtO/ZYQHoXVJXrtMkTj3EmFOTkWSe+FgwdgakuvHmc2C6jRMiPvqSyjdy94OMdl8Rw+hkL8geEga83bxeIT+vDd86AbAtZAS6nZWNvdW50BGdwcm9maWxleCV1cm46aGl2ZW1pbmQ6cmVjZWlwdHM6Y2Fwc3VsZS1iYXRjaDoxamJhdGNoX3Jvb3R4R3NoYTI1NjozOTZhNzUxOTAxY2JkODNmY2Y3OWIzZjRjZTc3ODI3YWVmMzFmMTJlYjNjNTI3ZWUyOGM2ODJkZTAyMjA5OTRkandpbmRvd19lbmR4GDIwMjYtMTEtMDFUMDE6MjY6MzYuMTU2Wmx3aW5kb3dfc3RhcnR4GDIwMjYtMTEtMDFUMDE6MjY6MzYuMTU0Wm5sYXN0X2FjdGlvbl9pZHgaMDFNNkFCRUNCV1IwUEZUUk1YMFc5UTA4NFJvZmlyc3RfYWN0aW9uX2lkeBowMU02QUJFQ0JUMzA5NzQ4V0FUNFYxUUVQQVhAcwAYc/jnAVpeLymriT2p48W52P/J5qRNE+GIVb3IMYY/ImjDBnavdrAZ4tDhMLJoOuypO48A5mmqnfd9oh4fKA==",
+      "checkpoint": "vectors.hivemind.example/2026\n3\ntTTC0GsSkzsxG1yTtmPGONLTNkYvFa1z8QGlaCOh27g=\n\n— vectors.hivemind.example/2026 OwnrupWZnep3ZiO682LAM+AVZdyfcoJ9qIUO5MVUr2rT7Tj9WfJwTIFq8ZIBJrwqR200LoNygEmzcxOZ8zn2ArmzFw4=\n— w0.vectors.example VG9n0QAAAABq5pVMqPAc8xaI0AJhfwiRnAxGpgtDMsGfBDzP1xI9IynuscnY5zaM8FFhwv3SyK4BrXoDhwiad2PMWPhyB/5BJa0LAw==\n— w1.vectors.example hHMx4AAAAABq5pVMZAFoOJB4RyEr8NJ5QsrRda4/2w/7PBBMN2RlGRhntwWj1FUvnIyhEBsyySdkzEDO8u0BN0zfuH/EHmKzH2QPAQ==\n— w2.vectors.example on/IyQAAAABq5pVMS2rTM3lZbrBJQxFMZ9pDLECrth7x6WZzkSkxrd1wLFg30LNaSysfOM7rrXGv2XuACV52TaqwAa0cF7kM9d6MAg==\n",
+      "batch": {
+        "capsule": "rmVhZ2VudKFpc3BpZmZlX2lkeCBzcGlmZmU6Ly92ZWN0b3JzLmV4YW1wbGUvYWdlbnQvMWZlZmZlY3SiZnN0YXR1c2ljb25maXJtZWRvcmVzcG9uc2VfZGlnZXN0eEdzaGEyNTY6M2QxOGViMDcxNmVjN2Q4ZDEwMWIxYTc3N2Y1ZTZmMmU1ZDFiODBkZmE5Yjk5OWY4M2U2YmIwNTM0NWYyM2MyOGdwcml2YWN5om9zYWx0X2NvbW1pdG1lbnR4R3NoYTI1NjpjMDcyMzBmNzA1M2JmYjg2MmZiMjI0YjBmZjY0MjQyMGVhMjM3ZmViMGFmY2JhMjI2YjU3ZTBiMDU2ODI1ZTFmdGRpc2Nsb3N1cmVfcG9saWN5X2lkeB5pby5oaXZlbWluZC5kaXNjbG9zdXJlLmRlZmF1bHRncHJvZmlsZXgfdXJuOmhpdmVtaW5kOnJlY2VpcHRzOmNhcHN1bGU6MWlhY3Rpb25faWR4GjAxTTZBQkVDNkFYSEE4Q1NDNTFZU042SDBXaWFzc3VyYW5jZaJrbGVkZ2VyX21vZGVoYW5jaG9yZWRwYXR0ZXN0YXRpb25fbW9kZWRub25laWNhdXNhbGl0eaBpaXNzdWVkX2F0eBgyMDI2LTExLTAxVDAxOjI2OjM1Ljk3OFppb3BlcmF0aW9uo2RraW5kY21jcGZtZXRob2RxdG9vbHMvY2FsbDpyZWZ1bmRpcmlza190aWVyaWZpbmFuY2lhbGlwcmluY2lwYWyhcnN1YmplY3RfY29tbWl0bWVudHhHc2hhMjU2OjE3MjEzMDg0MmJkMmFkZmEyMjllYjE0YjZiODAxOTY2ZjgwYjBkYTQ4NDcxMDAyZDY4MmQ2Mzc5YzY0ZWY1NzZqY2Fwc3VsZV9pZHhHc2hhMjU2Ojk1ZmRmYTIzYTM2MjczYzA0ZTU5MWY2ZjIyMGEwNmE4YTJhNzA3NWFmYjY1MWJjZjE2MGVhYTM4OTc3YmIzOWRrZGlzcG9zaXRpb26haWF1dGhvcml0eW92ZWN0b3ItZGVjaXNpb25tdmVyZGljdF9jbGFzc2hleGVjdXRlZG5yZXF1ZXN0X2RpZ2VzdHhHc2hhMjU2Ojg5ZTRlYjU3MGVhN2FmMDgxNjYyOWI1MWU2MjEzYjU4NTUzYTEwY2MzNmM4NDEwMWJlYTJjYzYwYjc2N2E3ZjY=",
+        "proof": {
+          "treeSize": 4,
+          "leafIndex": 2,
+          "hashes": [
+            "8/iG+NJYoVlAzeBYjgkdoWCikQ/Idhgvp5Mfe68A08o=",
+            "kXznK6A+xaTM5UedIFd/k9zaeD7tDxfTwyuxZlqFntw="
+          ]
+        }
+      }
+    }
+  ],
+  "cel_cases": [
+    {
+      "program": "ticket.state == 'solved' && !reopened_within(duration('168h'))",
+      "env": {
+        "ticket": {
+          "state": "solved"
+        }
+      },
+      "note": "host supplies reopened_within from confirmations"
+    },
+    {
+      "program": "a + 2 == 5 && 'x' in ['x','y']",
+      "env": {
+        "a": 3
+      },
+      "expect": true
+    },
+    {
+      "program": "timestamp('2026-01-08T00:00:00Z') - timestamp('2026-01-01T00:00:00Z') == duration('168h')",
+      "env": {},
+      "expect": true
+    },
+    {
+      "program": "size(items) >= 2 && items[1] == 20",
+      "env": {
+        "items": [
+          10,
+          20
+        ]
+      },
+      "expect": true
+    }
+  ],
+  "merkle": {
+    "note": "RFC 9162: leaf = SHA256(0x00||data), node = SHA256(0x01||l||r)",
+    "empty_root_hex": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}
